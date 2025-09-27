@@ -94,4 +94,5 @@ func load_level(level_index):
 	return false
 
 func _process(_delta: float):
-	pass
+	if Input.is_action_just_pressed("pause"):
+		load_menu()
