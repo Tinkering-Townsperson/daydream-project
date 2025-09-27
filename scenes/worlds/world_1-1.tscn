@@ -88,7 +88,7 @@ position = Vector2(304, 516)
 scale = Vector2(4, 4)
 
 [node name="Youqi" parent="." instance=ExtResource("3_8pdir")]
-position = Vector2(493, 497)
+position = Vector2(1052, 393)
 scale = Vector2(4, 4)
 
 [node name="TileMap" type="TileMap" parent="."]
