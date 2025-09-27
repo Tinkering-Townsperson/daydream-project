@@ -24,7 +24,11 @@ func _physics_process(delta: float) -> void:
 		
 	if velocity.x == 0:
 		$AnimatedSprite2D.animation = "default"
+	elif velocity.x <= 1:
+		$AnimatedSprite2D.animation = "run"
+		$AnimatedSprite2D.flip_h = true
 	else:
 		$AnimatedSprite2D.animation = "run"
+		$AnimatedSprite2D.flip_h = false
 
 	move_and_slide()
