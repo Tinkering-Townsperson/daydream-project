@@ -27,3 +27,7 @@ func _process(_delta: float) -> void:
 
 func _on_play_button_pressed() -> void:
 	play.call()
+
+
+func _on_credits_pressed() -> void:
+	pass # Replace with function body.

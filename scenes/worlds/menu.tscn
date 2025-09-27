@@ -1,7 +1,127 @@
-[gd_scene load_steps=3 format=3 uid="uid://ds422mdbiw4kx"]
+[gd_scene load_steps=21 format=3 uid="uid://ds422mdbiw4kx"]
 
 [ext_resource type="Script" uid="uid://b5emqhpjjtuqs" path="res://scenes/worlds/menu.gd" id="1_kxoy0"]
 [ext_resource type="Texture2D" uid="uid://bwehrgi4ipvfy" path="res://assets/backgrounds/menu.png" id="2_jg4ok"]
+[ext_resource type="Texture2D" uid="uid://df5b24orptg1q" path="res://assets/sprites/Daqi.idle.angry.png" id="3_80ey4"]
+[ext_resource type="Texture2D" uid="uid://bu33fjxuh0gm7" path="res://assets/sprites/Daqi.run.angry.png" id="4_0f3pf"]
+[ext_resource type="Texture2D" uid="uid://dx4mfm2kfwd0s" path="res://assets/sprites/Youqi.idle.png" id="5_03bf4"]
+[ext_resource type="Texture2D" uid="uid://55ap5ofcwucs" path="res://assets/sprites/Youqi.run.png" id="6_mt224"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adgci"]
+atlas = ExtResource("4_0f3pf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvnb6"]
+atlas = ExtResource("4_0f3pf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4k4ol"]
+atlas = ExtResource("4_0f3pf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw2iq"]
+atlas = ExtResource("4_0f3pf")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7220"]
+atlas = ExtResource("4_0f3pf")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5r18"]
+atlas = ExtResource("4_0f3pf")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntr0t"]
+atlas = ExtResource("4_0f3pf")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_878u1"]
+atlas = ExtResource("4_0f3pf")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4v0ps"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_80ey4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adgci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvnb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4k4ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw2iq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7220")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5r18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntr0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_878u1")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x334o"]
+atlas = ExtResource("6_mt224")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3q02"]
+atlas = ExtResource("6_mt224")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4ft1"]
+atlas = ExtResource("6_mt224")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5macx"]
+atlas = ExtResource("6_mt224")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41ah7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_03bf4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x334o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3q02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4ft1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5macx")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -15,24 +135,71 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_jg4ok")
 
-[node name="Button" type="Button" parent="."]
-texture_filter = 1
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 834.0
-offset_top = 236.0
-offset_right = 1073.0
-offset_bottom = 376.0
+offset_left = 16.0
+offset_top = 217.0
+offset_right = 1136.0
+offset_bottom = 357.0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Play" type="Button" parent="HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.9490196, 0.67058825, 0.9490196, 1)
 theme_override_font_sizes/font_size = 96
 text = "PLAY"
+flat = true
+
+[node name="Credits" type="Button" parent="HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.9490196, 0.67058825, 0.9490196, 1)
+theme_override_font_sizes/font_size = 96
+text = "CREDITS"
+flat = true
+
+[node name="Quit" type="LinkButton" parent="HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.9490196, 0.67058825, 0.9490196, 1)
+theme_override_font_sizes/font_size = 96
+text = "QUIT"
+underline = 2
+uri = "http://rr.payamaroufi.xyz"
 
 [node name="Label" type="Label" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 272.0
+offset_left = 16.0
 offset_top = 51.0
-offset_right = 911.0
+offset_right = 1136.0
 offset_bottom = 183.0
 theme_override_font_sizes/font_size = 96
 text = "TWIN CHASER"
+horizontal_alignment = 1
 
-[connection signal="pressed" from="Button" to="." method="_on_play_button_pressed"]
+[node name="CharacterBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="Daqi" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(157.99998, 516.99994)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_4v0ps")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.5517922
+
+[node name="Youqi" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(394, 516.99994)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_41ah7")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.42538905
+
+[connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Credits" to="." method="_on_credits_pressed"]
