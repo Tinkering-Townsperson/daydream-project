@@ -11,8 +11,52 @@ config_version=5
 [application]
 
 config/name="daydream-project"
+run/main_scene="uid://biv8vmllc6b0s"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://global.gd"
+
+[input]
+
+pause={
+"deadzone": 0.2,
+"events": []
+}
+y_left={
+"deadzone": 0.2,
+"events": []
+}
+y_right={
+"deadzone": 0.2,
+"events": []
+}
+y_up={
+"deadzone": 0.2,
+"events": []
+}
+y_down={
+"deadzone": 0.2,
+"events": []
+}
+d_left={
+"deadzone": 0.2,
+"events": []
+}
+d_right={
+"deadzone": 0.2,
+"events": []
+}
+d_up={
+"deadzone": 0.2,
+"events": []
+}
+d_down={
+"deadzone": 0.2,
+"events": []
+}
 
 [rendering]
 

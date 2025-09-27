@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ewfsjmgyldhs"]
+
+[ext_resource type="Texture2D" uid="uid://bwehrgi4ipvfy" path="res://assets/backgrounds/menu.png" id="1_1iyg1"]
+
+[node name="1-1" type="Node2D"]
+
+[node name="Menu" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 324)
+texture = ExtResource("1_1iyg1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(576, 324)
