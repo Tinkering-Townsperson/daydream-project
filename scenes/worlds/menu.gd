@@ -5,7 +5,7 @@ var current_index: int = 0
 const JUMP_VELOCITY = -1400
 
 @export var play: Callable
-@export var select_level: Callable
+@export var credits: Callable
 
 var inventory: Inventory
 var y_positions = [300.0, 460.0]
@@ -16,9 +16,6 @@ func _ready() -> void:
 	#main_theme.play()
 	
 	inventory = preload("res://Inventory.gd").new()
-	actions = [
-		play, select_level
-	]
 
 
 func _process(_delta: float) -> void:
@@ -30,4 +27,4 @@ func _on_play_button_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	pass # Replace with function body.
+	credits.call()

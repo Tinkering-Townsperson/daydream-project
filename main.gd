@@ -2,12 +2,13 @@ extends Node2D
 
 @onready var level_container = $LevelContainer
 @onready var menu_scene: PackedScene = preload("res://scenes/worlds/menu.tscn")
+@onready var credits_scene: PackedScene = preload("res://scenes/Credits.tscn")
 var inventory = preload("res://Inventory.gd").new()
 
 
 var current_level = null
 var menu: Control
-var level_selector: Control
+var credits_menu: Control
 var paused: bool = false
 
 func _ready():
@@ -33,7 +34,7 @@ func load_menu() -> void:
 	menu = menu_scene.instantiate()
 	if menu:
 		menu.play = play
-		menu.select_level = select_level
+		menu.credits = credits
 		add_child(menu)
 
 func is_level():
@@ -42,6 +43,11 @@ func is_level():
 func remove_levels():
 	for child in level_container.get_children():
 		child.queue_free()
+	
+	for child in get_children():
+		if "Control" in child.name:
+			child.queue_free()
+	
 	await get_tree().process_frame
 
 func detect_current_level():
@@ -68,11 +74,11 @@ func play() -> void:
 		menu.hide()
 	
 
-func select_level() -> void:
+func credits() -> void:
 	if is_level():
 		remove_levels()
 	
-	add_child(level_selector)
+	add_child(credits_scene.instantiate())
 
 func load_level(level_index):
 	inventory.fetch_inventory()
