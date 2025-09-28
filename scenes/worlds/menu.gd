@@ -1,16 +1,16 @@
 extends Control
 
-var current_index: int = 0
-
-const JUMP_VELOCITY = -1400
+const VELOCITY = 7.5
 
 @export var play: Callable
 @export var credits: Callable
 
 var inventory: Inventory
-var y_positions = [300.0, 460.0]
 var actions: Array
-var call_action = false
+
+@onready var twins = $CharacterBody2D
+var current_velocity = VELOCITY
+
 
 func _ready() -> void:
 	#main_theme.play()
@@ -19,7 +19,14 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	pass
+	twins.position.x += current_velocity
+	
+	if twins.position.x >= 1552:
+		current_velocity = -VELOCITY
+		twins.scale = Vector2(-1, 1)
+	elif twins.position.x <= -460:
+		current_velocity = VELOCITY
+		twins.scale = Vector2(1, 1)
 
 
 func _on_play_button_pressed() -> void:
