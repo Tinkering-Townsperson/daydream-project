@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca0cy44hksrru"]
+
+[ext_resource type="Texture2D" uid="uid://bwehrgi4ipvfy" path="res://assets/backgrounds/menu.png" id="1_hi4w3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_hi4w3")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 62.0
+offset_right = 1051.0
+offset_bottom = 563.0
+theme_override_font_sizes/font_size = 50
+text = "Credits!
+
+Main code, movement, music: Paya
+Art, map building, fixing map: Youqi
+Tile artist: Ruibin
+
+Game Idea: Daqi crashing out on Youqi"
