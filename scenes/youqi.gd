@@ -32,3 +32,14 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.flip_h = false
 
 	move_and_slide()
+	
+	# Check all collisions this frame
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider().is_in_group("players"):
+			_on_player_collision(collision.get_collider())
+
+func _on_player_collision(other_player):
+	print("Collided with: ", other_player.name)
+	$"..".gameover = "d"
+	# Do something here, like reduce health or push players apart
