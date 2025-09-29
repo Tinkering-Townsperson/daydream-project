@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Twin Chaser"
-config/version="v1.1.0"
+config/version="v1.1.1"
 run/main_scene="uid://biv8vmllc6b0s"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0.34509805, 0.34509805, 0.34509805, 1)
@@ -23,6 +23,10 @@ config/description="A 2-player platformer game where the players control two cha
 [autoload]
 
 Global="*res://global.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [global_group]
 
