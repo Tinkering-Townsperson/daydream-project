@@ -10,10 +10,15 @@ config_version=5
 
 [application]
 
-config/name="daydream-project"
+config/name="Twin Chaser"
+config/version="v1.1.0"
 run/main_scene="uid://biv8vmllc6b0s"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.34509805, 0.34509805, 0.34509805, 1)
+boot_splash/use_filter=false
+boot_splash/image="uid://dcxgl7al1q4v8"
+config/icon="uid://dcxgl7al1q4v8"
+config/description="A 2-player platformer game where the players control two characters, inspired by my real life friends the twins, who chase each other around. One must attempt to catch the other, while the other must avoid being caught."
 
 [autoload]
 
